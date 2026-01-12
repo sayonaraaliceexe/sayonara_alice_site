@@ -176,30 +176,53 @@ body {
 }
 
 
-/* ======================================================
-   SCROLLBAR PERSONALIZZATA — STILE GLITCH BLU
-====================================================== */
-/* Scrollbar personalizzata */
+
+/* Reset default scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
+  height: 0;
 }
 
-::-webkit-scrollbar-track {
-  background: #0d0d0d; /* colore sfondo track */
+/* Custom overlay scrollbar container */
+#custom-scrollbar {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  width: 6px;
+  height: 100%;
+  background: transparent;
+  z-index: 9999;
+  pointer-events: none;
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00c3ff, #3a77ff); /* gradiente blu */
-  border-radius: 10px;
-  border: 2px solid #0d0d0d; /* bordo per separare dallo sfondo */
+#scroll-thumb {
+  position: absolute;
+  width: 6px;
+  height: 40px;
+  border-radius: 3px;
+  background: radial-gradient(circle, rgba(0,183,255,1) 0%, rgba(0,102,204,1) 60%, rgba(0,102,204,0) 100%);
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #0077ff;
+  animation: pulse 1.2s infinite;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #56ccf2, #2f80ed); /* gradiente più chiaro */
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #00bfff, 0 0 20px #0077ff; }
+  50% { box-shadow: 0 0 20px #00bfff, 0 0 30px #0077ff; }
+  100% { box-shadow: 0 0 10px #00bfff, 0 0 20px #0077ff; }
 }
 
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #3a77ff #0d0d0d;
+.spark {
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background: #00bfff;
+  opacity: 0.8;
+  animation: fadeout 0.7s ease-out forwards;
+}
+
+@keyframes fadeout {
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
 }
