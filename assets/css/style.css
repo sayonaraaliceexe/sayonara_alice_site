@@ -206,5 +206,19 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #3a77ff #0d0d0d;
 }
+/* ======================================================
+   SCROLLBAR CANVAS PARTICELLARE CUSTOM
+====================================================== */
+
+#custom-scrollbar {
+  position: fixed;
+  top: 0;
+  right: 5px;
+  width: 4px;
+  height: 100%;
+  background: transparent;
+  z-index: 99;
+  pointer-events: none;
+}
 
 }
