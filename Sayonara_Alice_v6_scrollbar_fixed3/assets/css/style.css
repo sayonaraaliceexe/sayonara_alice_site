@@ -1,0 +1,146 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0d0d0d;
+    color: white;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navbar ul li a {
+    color: #00bfff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    text-shadow: 0 0 5px #00bfff;
+}
+
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.glitch-title {
+    font-size: 2.5rem;
+    animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 1px 0 #0ff, -1px 0 #f0f; }
+    50% { text-shadow: -2px 0 #0ff, 2px 0 #f0f; }
+    100% { text-shadow: 1px 0 #0ff, -1px 0 #f0f; }
+}
+
+.scroll-section {
+    min-height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.scroll-indicator {
+    position: fixed;
+    right: 10px;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #00bfff, transparent);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.touch-effect {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-left: -15px;
+    margin-top: -15px;
+    border-radius: 50%;
+    background: rgba(0, 191, 255, 0.4);
+    animation: expandFade 0.7s ease-out forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes expandFade {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+/* Scrollbar biglia blu con scia */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00c6ff, #0072ff);
+  border-radius: 50px;
+  box-shadow: 0 0 8px #00c6ff;
+}
+
+/* Effetto canvas delle particelle */
+#touch-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}

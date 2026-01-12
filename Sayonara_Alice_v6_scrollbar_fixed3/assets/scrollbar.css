@@ -1,0 +1,37 @@
+
+/* Scrollbar personalizzata - cross-browser */
+body::-webkit-scrollbar {
+  width: 0px; /* rimuove la scrollbar visibile */
+  height: 0px;
+}
+
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+/* Linea blu laterale animata */
+body::after {
+  content: '';
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00bfff, #4072ff);
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #4072ff;
+  animation: glow-scroll 2s infinite alternate;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@keyframes glow-scroll {
+  0% {
+    opacity: 0.4;
+    box-shadow: 0 0 6px #00bfff;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 15px #00bfff, 0 0 30px #4072ff;
+  }
+}
