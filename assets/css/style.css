@@ -118,7 +118,7 @@ body {
 
 /* ======================================================
    INDICATORE SCROLL LATERALE
-======================================================
+====================================================== */
 
 .scroll-indicator {
     position: fixed;
@@ -131,7 +131,6 @@ body {
     pointer-events: none;
     z-index: 1000;
 }
- */
 
 /* ======================================================
    EFFETTO TOCCO (PARTICELLE)
@@ -180,30 +179,27 @@ body {
 /* ======================================================
    SCROLLBAR PERSONALIZZATA — STILE GLITCH BLU
 ====================================================== */
-
-/* Chrome, Edge, Safari */
+/* Scrollbar personalizzata */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #0d0d0d; /* sfondo sito */
+  background: #0d0d0d; /* colore sfondo track */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00c3ff, #3a77ff);
-    border-radius: 10px;
-    border: 2px solid #0d0d0d;
-    box-shadow: 0 0 6px #00c3ff66;
+  background: linear-gradient(180deg, #00c3ff, #3a77ff); /* gradiente blu */
+  border-radius: 10px;
+  border: 2px solid #0d0d0d; /* bordo per separare dallo sfondo */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #56ccf2, #2f80ed);
+  background: linear-gradient(180deg, #56ccf2, #2f80ed); /* gradiente più chiaro */
 }
-
 
 /* Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: #3a77ff #0d0d0d;
+  scrollbar-width: thin;
+  scrollbar-color: #3a77ff #0d0d0d;
 }
